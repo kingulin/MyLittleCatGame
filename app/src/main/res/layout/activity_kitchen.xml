@@ -4,30 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Kitchen">
+
 
     <ImageView
-        android:id="@+id/pillow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/fridge"
+        android:layout_width="307dp"
+        android:layout_height="514dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catMood"
-        app:layout_constraintVertical_bias="0.665"
-        app:srcCompat="@drawable/pillow" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fridge" />
 
     <ImageView
         android:id="@+id/catMood"
-        android:layout_width="228dp"
-        android:layout_height="486dp"
-        android:adjustViewBounds="true"
+        android:layout_width="147dp"
+        android:layout_height="344dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
+        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/cat" />
 
     <TextView
@@ -44,10 +43,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toEndOf="@+id/hungry"
         app:srcCompat="@drawable/clean_full" />
 
@@ -84,28 +83,6 @@
 
 
     <ImageView
-        android:id="@+id/lamp"
-        android:layout_width="107dp"
-        android:layout_height="169dp"
-        app:layout_constraintBottom_toTopOf="@+id/mood"
-        app:layout_constraintEnd_toStartOf="@+id/catMood"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/lamp" />
-
-    <ImageView
-        android:id="@+id/dark"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:alpha="0"
-        app:srcCompat="@drawable/dark"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-12dp" />
-
-    <ImageView
         android:id="@+id/arrright"
         android:layout_width="44dp"
         android:layout_height="68dp"
@@ -123,5 +100,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_left" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="392dp"
+        android:layout_height="201dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796"
+        app:srcCompat="@drawable/table" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="99dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@drawable/plate" />
+
+    <TextView
+        android:id="@+id/testy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/arrright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money_status_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
