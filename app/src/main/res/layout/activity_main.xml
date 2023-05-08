@@ -7,6 +7,17 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/pillow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/catMood"
+        app:layout_constraintVertical_bias="0.665"
+        app:srcCompat="@drawable/pillow" />
+
+    <ImageView
         android:id="@+id/catMood"
         android:layout_width="147dp"
         android:layout_height="344dp"
@@ -18,10 +29,10 @@
 
     <TextView
         android:id="@+id/money_status_id"
-        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/money_status"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,5 +78,46 @@
         app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toEndOf="@+id/clean"
         app:srcCompat="@drawable/sleep_full" />
+
+    <ImageView
+        android:id="@+id/lamp"
+        android:layout_width="107dp"
+        android:layout_height="169dp"
+        app:layout_constraintBottom_toTopOf="@+id/mood"
+        app:layout_constraintEnd_toStartOf="@+id/catMood"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248"
+        app:srcCompat="@drawable/lamp" />
+
+    <ImageView
+        android:id="@+id/dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:alpha="0"
+        app:srcCompat="@drawable/dark"
+        tools:layout_editor_absoluteX="-117dp"
+        tools:layout_editor_absoluteY="-12dp" />
+
+    <ImageView
+        android:id="@+id/arrright"
+        android:layout_width="44dp"
+        android:layout_height="68dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sleep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_right" />
+
+    <ImageView
+        android:id="@+id/arrleft"
+        android:layout_width="51dp"
+        android:layout_height="62dp"
+        android:alpha="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
