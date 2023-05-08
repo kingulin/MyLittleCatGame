@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name"></string>
-    <string name="money_status" >%d $</string>
+    <string name="money_status">%d $</string>
 </resources>

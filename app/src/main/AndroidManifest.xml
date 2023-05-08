@@ -12,6 +12,12 @@
         android:theme="@style/Theme.MyLittleCat"
         tools:targetApi="31">
         <activity
+            android:name=".Kitchen"
+            android:exported="false" />
+        <activity
+            android:name=".Bathroom"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

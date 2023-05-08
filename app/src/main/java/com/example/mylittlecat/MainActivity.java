@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     public ImageView Lamp;
     public static ImageView Dark;
     public boolean IsSleep = false;
+    public ImageView ArrR;
+    public ImageView ArrL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,5 +173,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //switch layout
+
+        ArrR = findViewById(R.id.arrright);
+        ArrL = findViewById(R.id.arrleft);
+
+        ArrR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_bathroom);
+            }
+        });
+
+//        ArrL.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.);
+//            }
+//        });
             }
         }
