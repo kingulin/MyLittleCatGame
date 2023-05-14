@@ -84,10 +84,10 @@ public class Bathroom extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-           ArrL2.setOnClickListener(new View.OnClickListener() {
+        ArrL2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  Intent intent = new Intent(Bathroom.this, MainActivity.class);
+                Intent intent = new Intent(Bathroom.this, MainActivity.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
                 intent.putExtra("CatClean_key", CatClean);
@@ -120,25 +120,25 @@ public class Bathroom extends AppCompatActivity{
 //
         if(ISActive){
 //        //set stats change
-        final android.os.Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (CatHungry > 0) CatHungry -= 1.5;
-                if (CatSleep > 0 ) CatSleep -= 2;
-                if (CatClean > 0) CatClean -= 5;
-                if (catMoodNum > 0) {
-                    catMoodNum -= 2;
-                    if (CatClean <= 50) {
-                        catMoodNum -= 1;
-                    }
-                    if (CatSleep <= 30) {
+            final android.os.Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (CatHungry > 0) CatHungry -= 1.5;
+                    if (CatSleep > 0 ) CatSleep -= 2;
+                    if (CatClean > 0) CatClean -= 5;
+                    if (catMoodNum > 0) {
                         catMoodNum -= 2;
+                        if (CatClean <= 50) {
+                            catMoodNum -= 1;
+                        }
+                        if (CatSleep <= 30) {
+                            catMoodNum -= 2;
+                        }
+                        if (CatHungry <= 50) {
+                            catMoodNum -= 5;
+                        }
                     }
-                    if (CatHungry <= 50) {
-                        catMoodNum -= 5;
-                    }
-                }
 
                     if (CatClean > 50 && catMoodNum > 50) {
                         IsCatClean = true;
@@ -154,51 +154,51 @@ public class Bathroom extends AppCompatActivity{
                         IsCatClean = false;
                         catMood.setImageResource(R.drawable.cat_sad_dirty);
                     }
-                //ico changes
-                if (CatClean >= 50) {
-                    Clean.setImageResource(R.drawable.clean_full);
-                } else if (CatClean >= 20) {
-                    Clean.setImageResource(R.drawable.clean_half);
-                } else if (CatClean >= 1) {
-                    Clean.setImageResource(R.drawable.clean_alittle);
-                } else {
-                    Clean.setImageResource(R.drawable.clean_none);
+                    //ico changes
+                    if (CatClean >= 50) {
+                        Clean.setImageResource(R.drawable.clean_full);
+                    } else if (CatClean >= 20) {
+                        Clean.setImageResource(R.drawable.clean_half);
+                    } else if (CatClean >= 1) {
+                        Clean.setImageResource(R.drawable.clean_alittle);
+                    } else {
+                        Clean.setImageResource(R.drawable.clean_none);
+                    }
+
+                    if (catMoodNum >= 50) {
+                        Mood.setImageResource(R.drawable.mood_full);
+                    } else if (catMoodNum >= 20) {
+                        Mood.setImageResource(R.drawable.mood_half);
+                    } else if (catMoodNum >= 1) {
+                        Mood.setImageResource(R.drawable.mood_alittle);
+                    } else {
+                        Mood.setImageResource(R.drawable.mood_none);
+                    }
+
+                    if (CatSleep >= 50) {
+                        Sleep.setImageResource(R.drawable.sleep_full);
+                    } else if (CatSleep >= 20) {
+                        Sleep.setImageResource(R.drawable.sleep_half);
+                    } else if (CatSleep >= 1) {
+                        Sleep.setImageResource(R.drawable.sleep_alittle);
+                    } else {
+                        Sleep.setImageResource(R.drawable.sleep_none);
+                    }
+
+                    if (CatHungry >= 50) {
+                        Hungry.setImageResource(R.drawable.hungry_full);
+                    } else if (CatHungry >= 20) {
+                        Hungry.setImageResource(R.drawable.hungry_half);
+                    } else if (CatHungry >= 1) {
+                        Hungry.setImageResource(R.drawable.hungry_alittle);
+                    } else {
+                        Hungry.setImageResource(R.drawable.hungry_none);
+                    }
+
+                    handler.postDelayed(this, 2*1000);
+
                 }
-
-                if (catMoodNum >= 50) {
-                    Mood.setImageResource(R.drawable.mood_full);
-                } else if (catMoodNum >= 20) {
-                    Mood.setImageResource(R.drawable.mood_half);
-                } else if (catMoodNum >= 1) {
-                    Mood.setImageResource(R.drawable.mood_alittle);
-                } else {
-                    Mood.setImageResource(R.drawable.mood_none);
-                }
-
-                if (CatSleep >= 50) {
-                    Sleep.setImageResource(R.drawable.sleep_full);
-                } else if (CatSleep >= 20) {
-                    Sleep.setImageResource(R.drawable.sleep_half);
-                } else if (CatSleep >= 1) {
-                    Sleep.setImageResource(R.drawable.sleep_alittle);
-                } else {
-                    Sleep.setImageResource(R.drawable.sleep_none);
-                }
-
-                if (CatHungry >= 50) {
-                    Hungry.setImageResource(R.drawable.hungry_full);
-                } else if (CatHungry >= 20) {
-                    Hungry.setImageResource(R.drawable.hungry_half);
-                } else if (CatHungry >= 1) {
-                    Hungry.setImageResource(R.drawable.hungry_alittle);
-                } else {
-                    Hungry.setImageResource(R.drawable.hungry_none);
-                }
-
-                handler.postDelayed(this, 2*1000);
-
-            }
-        },2*1000);}
+            },2*1000);}
         // sets money
 
         moneyShow = getString(R.string.money_status);
@@ -207,7 +207,7 @@ public class Bathroom extends AppCompatActivity{
 
         moneyShowFinal = findViewById(R.id.money_status_id);
         moneyShowFinal.setText(moneyShow);
-        }
+    }
     @Override
     protected void onResume() {
         super.onResume();
