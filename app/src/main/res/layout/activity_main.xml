@@ -14,15 +14,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/catMood"
-        app:layout_constraintVertical_bias="0.665"
+        app:layout_constraintVertical_bias="0.636"
         app:srcCompat="@drawable/pillow" />
 
     <ImageView
         android:id="@+id/catMood"
-        android:layout_width="147dp"
-        android:layout_height="344dp"
+        android:layout_width="218dp"
+        android:layout_height="423dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cat" />
@@ -98,8 +99,8 @@
         android:adjustViewBounds="true"
         android:alpha="0"
         app:srcCompat="@drawable/dark"
-        tools:layout_editor_absoluteX="-117dp"
-        tools:layout_editor_absoluteY="-12dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/arrright"
