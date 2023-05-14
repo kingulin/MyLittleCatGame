@@ -74,6 +74,7 @@ public class Bathroom extends AppCompatActivity{
         ArrR2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ISActive = false;
                 Intent intent = new Intent(Bathroom.this, Kitchen.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
@@ -87,6 +88,7 @@ public class Bathroom extends AppCompatActivity{
         ArrL2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ISActive = false;
                 Intent intent = new Intent(Bathroom.this, MainActivity.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
@@ -208,17 +210,16 @@ public class Bathroom extends AppCompatActivity{
         moneyShowFinal = findViewById(R.id.money_status_id);
         moneyShowFinal.setText(moneyShow);
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        ISActive = true;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ISActive = false;
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        ISActive = true;
+//    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        ISActive = false;
+//    }
 
 
 }

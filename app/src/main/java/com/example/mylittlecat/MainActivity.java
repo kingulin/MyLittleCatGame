@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     if (CatHungry > 0) CatHungry -= 1.5;
                     if (CatSleep > 0 && !IsSleep) CatSleep -= 2;
-                    else if(CatSleep <= 100 && IsSleep) CatSleep +=10;
+                    else if(CatSleep <= 100 && IsSleep) CatSleep +=20;
                     if (CatClean > 0) CatClean -= 5;
                     if (catMoodNum > 0) {
                         catMoodNum -= 2;
@@ -178,7 +178,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!IsSleep){
                     IsSleep = true;
-                    catMood.setImageResource(R.drawable.cat_sleep);
+                        if(IsCatClean){
+                            catMood.setImageResource(R.drawable.cat_sleep);
+                        }else{
+
+                            catMood.setImageResource(R.drawable.cat_sleep_dirty);
+                        }
+
                     Dark.setAlpha((float) 0.6);
                 }else
                 {
@@ -197,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // setContentView(R.layout.activity_bathroom);
+                ISActive = false;
                 Intent intent = new Intent(MainActivity.this, Bathroom.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
@@ -206,16 +213,23 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("money_key", money);
                 startActivity(intent);
 
-                setContentView(R.layout.activity_bathroom);
             }
         });
 
-//        ArrL.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setContentView(R.layout.);
-//            }
-//        });
+        ArrL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ISActive = false;
+                Intent intent = new Intent(MainActivity.this, Plaingroom.class);
+                intent.putExtra("catMoodNum_key", catMoodNum);
+                intent.putExtra("IsCatClean_key", IsCatClean);
+                intent.putExtra("CatClean_key", CatClean);
+                intent.putExtra("CatHungry_key", CatHungry);
+                intent.putExtra("CatSleep_key", CatSleep);
+                intent.putExtra("money_key", money);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -226,15 +240,15 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        ISActive = true;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ISActive = false;
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        ISActive = true;
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        ISActive = false;
+//    }
 }
