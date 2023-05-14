@@ -19,15 +19,12 @@
 
     <ImageView
         android:id="@+id/catMood"
-        android:layout_width="228dp"
-        android:layout_height="486dp"
-        android:adjustViewBounds="true"
+        android:layout_width="147dp"
+        android:layout_height="344dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
         app:srcCompat="@drawable/cat" />
 
     <TextView
@@ -82,7 +79,6 @@
         app:layout_constraintStart_toEndOf="@+id/clean"
         app:srcCompat="@drawable/sleep_full" />
 
-
     <ImageView
         android:id="@+id/lamp"
         android:layout_width="107dp"
@@ -92,7 +88,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475"
+        app:layout_constraintVertical_bias="0.248"
         app:srcCompat="@drawable/lamp" />
 
     <ImageView
@@ -102,7 +98,7 @@
         android:adjustViewBounds="true"
         android:alpha="0"
         app:srcCompat="@drawable/dark"
-        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteX="-117dp"
         tools:layout_editor_absoluteY="-12dp" />
 
     <ImageView
