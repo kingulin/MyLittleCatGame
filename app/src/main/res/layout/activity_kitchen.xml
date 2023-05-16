@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/frige"
         android:layout_width="307dp"
         android:layout_height="514dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,54 +31,63 @@
     <TextView
         android:id="@+id/money_status_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
         android:text="@string/money_status"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="36dp"
+        android:layout_height="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coin" />
 
     <ImageView
         android:id="@+id/clean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hungry"
         app:srcCompat="@drawable/clean_full" />
 
     <ImageView
         android:id="@+id/hungry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mood"
         app:srcCompat="@drawable/hungry_full" />
 
     <ImageView
         android:id="@+id/mood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/mood_full" />
 
     <ImageView
         android:id="@+id/sleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toEndOf="@+id/clean"
         app:srcCompat="@drawable/sleep_full" />
+
 
 
     <ImageView

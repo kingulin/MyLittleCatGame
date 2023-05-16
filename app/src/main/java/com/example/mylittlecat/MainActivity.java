@@ -16,26 +16,26 @@ import java.util.logging.LogRecord;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ImageView catMood;
-    public ImageView Mood;
-    public int catMoodNum = 100;
-    public ImageView Clean;
-    public boolean IsCatClean = true;
-    public static int CatClean = 100;
-    public ImageView Hungry;
-    public static int CatHungry = 100;
-    public ImageView Sleep;
-    public static int CatSleep = 100;
-    public int money = 0;
-    public String moneyShow;
-    public TextView moneyShowFinal;
-    public ImageView Lamp;
-    public static ImageView Dark;
-    public boolean IsSleep = false;
-    public boolean ISActive = true;
+    private ImageView catMood;
+    private ImageView Mood;
+    private int catMoodNum = 100;
+    private ImageView Clean;
+    private boolean IsCatClean = true;
+    private static int CatClean = 100;
+    private ImageView Hungry;
+    private static int CatHungry = 100;
+    private ImageView Sleep;
+    private static int CatSleep = 100;
+    private int money = 0;
+    private String moneyShow;
+    private TextView moneyShowFinal;
+    private ImageView Lamp;
+    private static ImageView Dark;
+    private boolean IsSleep = false;
+    private boolean ISActive = true;
 
-    public ImageView ArrR;
-    public ImageView ArrL;
+    private ImageView ArrR;
+    private ImageView ArrL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ISActive = false;
-                Intent intent = new Intent(MainActivity.this, Plaingroom.class);
+                Intent intent = new Intent(MainActivity.this, Livingroom.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
                 intent.putExtra("CatClean_key", CatClean);

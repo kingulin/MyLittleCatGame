@@ -5,43 +5,40 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Kitchen extends AppCompatActivity {
-
+public class Livingroom extends AppCompatActivity {
+    private ImageView ArrR;
+    private ImageView ArrL;
+    private int CatClean;
+    private boolean IsCatClean;
+    private boolean ISActive = true;
     private ImageView catMood;
     private ImageView Mood;
     private int catMoodNum = 100;
     private ImageView Clean;
-    private boolean IsCatClean ;
-    private static int CatClean;
     private ImageView Hungry;
-    private static int CatHungry;
+    private static int CatHungry = 100;
     private ImageView Sleep;
-    private int CatSleep ;
-    private int money ;
+    private static int CatSleep = 100;
+    private int money = 0;
     private String moneyShow;
     private TextView moneyShowFinal;
-    private boolean ISActive = true;
-
-    private ImageView ArrR;
-    private ImageView ArrL;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchen);
+        setContentView(R.layout.activity_livingroom);
+
         ArrR = findViewById(R.id.arrright);
         ArrL = findViewById(R.id.arrleft);
 
         ArrR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 setContentView(R.layout.activity_bathroom);
-                Intent intent = new Intent(Kitchen.this, Livingroom.class);
+                // setContentView(R.layout.activity_bathroom
+                Intent intent = new Intent(Livingroom.this, MainActivity.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
                 intent.putExtra("CatClean_key", CatClean);
@@ -53,11 +50,10 @@ public class Kitchen extends AppCompatActivity {
             }
         });
 
-                ArrL.setOnClickListener(new View.OnClickListener() {
+        ArrL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(Kitchen.this, Bathroom.class);
+                Intent intent = new Intent(Livingroom.this, Kitchen.class);
                 intent.putExtra("catMoodNum_key", catMoodNum);
                 intent.putExtra("IsCatClean_key", IsCatClean);
                 intent.putExtra("CatClean_key", CatClean);
@@ -67,6 +63,7 @@ public class Kitchen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         catMood = findViewById(R.id.catMood);
         Mood = findViewById(R.id.mood);
         Clean = findViewById(R.id.clean);
@@ -188,4 +185,9 @@ public class Kitchen extends AppCompatActivity {
         moneyShowFinal = findViewById(R.id.money_status_id);
         moneyShowFinal.setText(moneyShow);
 
-    }}
+
+
+
+    }
+
+    }

@@ -11,25 +11,25 @@ import android.widget.TextView;
 
 public class Bathroom extends AppCompatActivity{
 
-    public ImageView Shower;
-    public ImageView Soap;
-    public int CatClean;
-    public ImageView Bubbles;
+    private ImageView Shower;
+    private ImageView Soap;
+    private int CatClean;
+    private ImageView Bubbles;
     private ImageView ArrL2;
     private ImageView ArrR2;
     private boolean IsCatClean;
     private boolean ISActive = true;
-    public ImageView catMood;
-    public ImageView Mood;
-    public int catMoodNum = 100;
-    public ImageView Clean;
-    public ImageView Hungry;
-    public static int CatHungry = 100;
-    public ImageView Sleep;
-    public static int CatSleep = 100;
-    public int money = 0;
-    public String moneyShow;
-    public TextView moneyShowFinal;
+    private ImageView catMood;
+    private ImageView Mood;
+    private int catMoodNum = 100;
+    private ImageView Clean;
+    private ImageView Hungry;
+    private static int CatHungry = 100;
+    private ImageView Sleep;
+    private static int CatSleep = 100;
+    private int money = 0;
+    private String moneyShow;
+    private TextView moneyShowFinal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
