@@ -29,14 +29,14 @@ public class Kitchen extends AppCompatActivity {
 
     private ImageView ArrR;
     private ImageView ArrL;
-
+    private ImageView Fridge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
         ArrR = findViewById(R.id.arrright);
         ArrL = findViewById(R.id.arrleft);
-
+        Fridge = findViewById(R.id.frige);
         ArrR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,6 +178,13 @@ public class Kitchen extends AppCompatActivity {
                 }
             },2*1000);}
 
+
+        Fridge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         // sets money
 

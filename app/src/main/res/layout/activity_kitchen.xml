@@ -89,11 +89,10 @@
         app:srcCompat="@drawable/sleep_full" />
 
 
-
     <ImageView
         android:id="@+id/arrright"
-        android:layout_width="44dp"
-        android:layout_height="68dp"
+        android:layout_width="59dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="@+id/sleep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -101,8 +100,8 @@
 
     <ImageView
         android:id="@+id/arrleft"
-        android:layout_width="51dp"
-        android:layout_height="62dp"
+        android:layout_width="59dp"
+        android:layout_height="80dp"
         android:alpha="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
