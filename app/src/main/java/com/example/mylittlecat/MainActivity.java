@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
+import android.widget.Toast;
 
 //import java.util.logging.Handler;
 import java.util.logging.LogRecord;
@@ -58,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
         CatHungry = takeintent.getIntExtra("CatHungry_key", 100);
         CatSleep = takeintent.getIntExtra("CatSleep_key", 100);
         money = takeintent.getIntExtra("money_key", 0);
+
         catMood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(catMoodNum <99){
                     catMoodNum +=2;
                 }
@@ -73,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }}
         });
-
         //set stats change
         if(ISActive){
             final Handler handler = new Handler();
@@ -162,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
         // sets money
 
         moneyShow = getString(R.string.money_status);
+      //  moneyShow = "sleep" + CatSleep + ", shower" + CatClean + ", happy" + catMoodNum;
 
         moneyShow = String.format(moneyShow, money);
 
@@ -231,24 +234,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-//        ArrL.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setContentView(R.layout.);
-//            }
-//        });
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        ISActive = true;
-//    }
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        ISActive = false;
-//    }
 }
+

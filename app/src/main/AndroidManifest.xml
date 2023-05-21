@@ -16,7 +16,11 @@
             android:exported="false" />
         <activity
             android:name=".Kitchen"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+            android:name="android:spinnerStyle"
+            android:resource="@style/SpinnerStyle" />
+        </activity>
         <activity
             android:name=".Bathroom"
             android:exported="false" />

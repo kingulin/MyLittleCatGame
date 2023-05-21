@@ -205,6 +205,7 @@ public class Bathroom extends AppCompatActivity{
 
         moneyShow = getString(R.string.money_status);
 
+     //   moneyShow = "sleep" + CatSleep + ", shower" + CatClean + ", happy" + catMoodNum;
         moneyShow = String.format(moneyShow, money);
 
         moneyShowFinal = findViewById(R.id.money_status_id);

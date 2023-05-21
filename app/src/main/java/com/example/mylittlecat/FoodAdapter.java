@@ -4,44 +4,49 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.Nullable;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
+import java.util.ArrayList;
 
-    private final LayoutInflater inflater;
+public class FoodAdapter extends ArrayAdapter<FoodSpinner> {
 
-    public FoodAdapter(Context context, LayoutInflater inflater) {
-        this.inflater = LayoutInflater.from(context);
+    public FoodAdapter(Context context, ArrayList<FoodSpinner> foodList) {
+        super(context, 0, foodList);
     }
+
 
     @NonNull
     @Override
-    public FoodAdapter.FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        return initView(position, convertView, parent);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodAdapter.FoodViewHolder holder, int position) {
+    public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+        return initView(position, convertView, parent);
     }
 
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-
-        public FoodViewHolder(@NonNull View itemView) {
-            super(itemView);
+    private View initView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.food_images, parent, false
+            );
         }
+        ImageView imageViewFood = convertView.findViewById(R.id.food_view_img);
+        TextView textViewName = convertView.findViewById(R.id.text_view_names);
 
-        @Override
-        public void onClick(View v) {
+        FoodSpinner currentItem = getItem(position);
 
+        if (currentItem != null) {
+            imageViewFood.setImageResource(currentItem.getFoodImage());
+            textViewName.setText(currentItem.getFoodName());
         }
+        return convertView;
     }
 }

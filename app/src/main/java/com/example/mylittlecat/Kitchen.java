@@ -1,14 +1,21 @@
 package com.example.mylittlecat;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Kitchen extends AppCompatActivity {
 
@@ -30,6 +37,10 @@ public class Kitchen extends AppCompatActivity {
     private ImageView ArrR;
     private ImageView ArrL;
     private ImageView Fridge;
+    private Spinner spinner;
+    private ArrayList<FoodSpinner> foodlists = new ArrayList<>();
+    private FoodAdapter foodAdapter;
+    private ImageView foods;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +48,7 @@ public class Kitchen extends AppCompatActivity {
         ArrR = findViewById(R.id.arrright);
         ArrL = findViewById(R.id.arrleft);
         Fridge = findViewById(R.id.frige);
+        foods = findViewById(R.id.foods);
         ArrR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,17 +191,41 @@ public class Kitchen extends AppCompatActivity {
             },2*1000);}
 
 
-        Fridge.setOnClickListener(new View.OnClickListener() {
+        FoodSpinner emptyFood = new FoodSpinner("", 0);
+        foodlists.add(emptyFood);
+        foodlists.add(new FoodSpinner("Meat", R.drawable.food1));
+        foodlists.add(new FoodSpinner("Apple", R.drawable.food2));
+
+
+        Spinner spinnerFood = findViewById(R.id.spinner);
+        foodAdapter = new FoodAdapter(this, foodlists);
+        spinnerFood.setAdapter(foodAdapter);
+        spinnerFood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                FoodSpinner selectedFood = foodAdapter.getItem(position);
+           //     foodAdapter.notifyDataSetChanged();
+                if (selectedFood != null) {
+                    int selectedImage = selectedFood.getFoodImage();
+                    foods.setImageResource(selectedImage);
+
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
 
             }
         });
+
+
+
 
         // sets money
 
         moneyShow = getString(R.string.money_status);
 
+       // moneyShow = "sleep" + CatSleep + ", shower" + CatClean + ", happy" + catMoodNum;
         moneyShow = String.format(moneyShow, money);
 
         moneyShowFinal = findViewById(R.id.money_status_id);
